@@ -25,8 +25,15 @@ SECRET_KEY = 's&%9guftx^*3!-dt3#p2tiv1i_v&i=!@1!!==b%nee97iomkji'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+if socket.gethostname() == 'Phyton-VirtualBox':
+    DEBUG = TEMPLATE_DEBUG = True
+    ALLOWED_HOSTS = []
+else:
+    DEBUG = TEMPLATE_DEBUG = False
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    ALLOWED_HOSTS = ['f2019.pythonanywhere.com']
 
 # Application definition
 
