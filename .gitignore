@@ -4,3 +4,4 @@ dgenv
 db.sqlite3
 /static
 -DS_Store
+.gitignore
